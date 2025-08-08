@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fletcher & Co. | Crafting Quality. Building Trust.</title>
+    <meta name="description" content="UK-based multi-trade property solutions including roofing, bricklaying, plastering, tiling, kitchen refits, fencing, asbestos removal, and general renovations.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .dark .bg-white {
+            color: #000000;
+        }
+        .dark .bg-gray-100 {
+            background-color: #1e1e1e;
+        }
+        .dark .bg-gray-200 {
+            background-color: #2a2a2a;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        .dark .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .testimonial-card {
+            min-width: 300px;
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            background-color: #3b82f6;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="dark">
+    <!-- Navigation -->
+    <nav class="bg-gray-900 dark:bg-gray-800 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-hammer text-blue-500 text-2xl"></i>
+                <a href="#" class="text-xl font-bold">Fletcher & Co.</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center space-x-4">
+                <button id="darkModeToggleMobile" class="text-white focus:outline-none">
+                    <i class="fas fa-adjust"></i>
+                </button>
+                <button id="mobileMenuButton" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#services" class="hover:text-blue-400 transition">Services</a>
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#reviews" class="hover:text-blue-400 transition">Reviews</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+                <div class="relative inline-block w-12 mr-2 align-middle select-none">
+                    <input type="checkbox" id="darkModeToggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                    <label for="darkModeToggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-500 cursor-pointer"></label>
+                </div>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-medium transition">Free Quote</a>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-800 dark:bg-gray-900 px-4 py-2">
+            <a href="#home" class="block py-2 hover:text-blue-400 transition">Home</a>
+            <a href="#about" class="block py-2 hover:text-blue-400 transition">About</a>
+            <a href="#services" class="block py-2 hover:text-blue-400 transition">Services</a>
+            <a href="#projects" class="block py-2 hover:text-blue-400 transition">Projects</a>
+            <a href="#reviews" class="block py-2 hover:text-blue-400 transition">Reviews</a>
+            <a href="#contact" class="block py-2 hover:text-blue-400 transition">Contact</a>
+            <a href="#contact" class="block bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-medium my-2 text-center transition">Free Quote</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg flex items-center justify-center text-white dark:text-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Fletcher & Co.</h1>
+            <p class="text-xl md:text-2xl mb-8">Crafting Quality. Building Trust.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-bold text-lg transition">Get a Free Quote</a>
+                <a href="#services" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-lg font-bold text-lg transition">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-16 dark:bg-gray-800 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Your Trusted Property Solutions Partner</h2>
+                <p class="max-w-3xl mx-auto">With over 15 years of experience in the UK property sector, Fletcher & Co. delivers exceptional craftsmanship and reliable service across a wide range of building trades. Our team of skilled professionals is committed to transforming your property with precision and care.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center text-black dark:text-black">
+                    <i class="fas fa-medal text-blue-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Quality Assurance</h3>
+                    <p>We use only premium materials and adhere to the highest industry standards for every project.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-clock text-blue-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Timely Completion</h3>
+                    <p>Our efficient project management ensures your work is completed on schedule, every time.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-pound-sign text-blue-500 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Transparent Pricing</h3>
+                    <p>No hidden costs - we provide clear, competitive quotes with detailed breakdowns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 dark:bg-gray-900 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Our Comprehensive Services</h2>
+                <p class="max-w-3xl mx-auto">From structural work to finishing touches, we handle all aspects of property renovation and maintenance.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md transition duration-300 text-black dark:text-black">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-home text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Roofing & Repairs</h3>
+                    </div>
+                    <p class="mb-4">Expert roof installations, repairs, and maintenance for all property types, using durable materials that withstand UK weather conditions.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition duration-300 text-black">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-bricks text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Bricklaying & Structural Work</h3>
+                    </div>
+                    <p class="mb-4">Precision bricklaying and structural modifications to enhance your property's integrity and aesthetic appeal.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-trowel text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Plastering & Rendering</h3>
+                    </div>
+                    <p class="mb-4">Smooth, flawless finishes for walls and ceilings, including traditional and modern rendering techniques.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-border-style text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Tiling & Grouting</h3>
+                    </div>
+                    <p class="mb-4">Professional tiling services for floors, walls, and splashbacks with meticulous attention to detail.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-sink text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Kitchen & Bathroom Refits</h3>
+                    </div>
+                    <p class="mb-4">Complete kitchen and bathroom transformations that combine functionality with stunning design.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-tree text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Fencing & Outdoor Carpentry</h3>
+                    </div>
+                    <p class="mb-4">Beautiful, durable outdoor structures including fencing, decking, and garden buildings to enhance your exterior space.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 7 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-biohazard text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Asbestos Removal</h3>
+                    </div>
+                    <p class="mb-4">Licensed, safe asbestos removal and disposal services conducted by fully trained professionals.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 8 -->
+                <div class="service-card bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                            <i class="fas fa-paint-roller text-blue-600 dark:text-blue-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">General Renovations</h3>
+                    </div>
+                    <p class="mb-4">Complete property makeovers including extensions, conversions, and refurbishments tailored to your requirements.</p>
+                    <a href="#" class="text-blue-600 dark:text-blue-400 font-medium hover:underline">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 dark:bg-gray-800 bg-gray-100 parallax" style="background-image: url('https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+        <div class="container mx-auto px-4">
+            <div class="bg-white dark:bg-gray-900 bg-opacity-90 dark:bg-opacity-90 p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-center">About Fletcher & Co.</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Our Story</h3>
+                        <p class="mb-6">Founded in 2008 by John Fletcher, our company began as a small team of skilled tradespeople with a shared commitment to quality workmanship. Today, we've grown into one of the most trusted multi-trade property solution providers in the UK, while maintaining our founder's original values.</p>
+                        
+                        <h3 class="text-xl font-bold mb-4">Our Promise</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Honest, transparent communication throughout your project</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Skilled, vetted tradespeople with extensive experience</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Compliance with all UK building regulations and safety standards</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                                <span>Comprehensive insurance coverage for your peace of mind</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+                            <h3 class="text-xl font-bold mb-4 text-center">Our Certifications</h3>
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <div class="text-center">
+                                    <i class="fas fa-certificate text-3xl text-blue-500 mb-2"></i>
+                                    <p class="text-sm">Asbestos Removal License</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-shield-alt text-3xl text-blue-500 mb-2"></i>
+                                    <p class="text-sm">CHAS Accredited</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fas fa-building text-3xl text-blue-500 mb-2"></i>
+                                    <p class="text-sm">Constructionline Gold</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 dark:bg-blue-900 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+                            <h3 class="text-xl font-bold mb-3 text-center">Meet Our Team</h3>
+                            <div class="flex items-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Fletcher" class="w-16 h-16 rounded-full mr-4 border-2 border-blue-500">
+                                <div>
+                                    <h4 class="font-bold">John Fletcher</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Founder & Managing Director</p>
+                                    <p class="text-sm mt-1">"We treat every property as if it were our own."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-16 dark:bg-gray-900 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Our Recent Projects</h2>
+                <p class="max-w-3xl mx-auto">See the transformation we've delivered for homeowners and businesses across the UK.</p>
+            </div>
+            
+            <div class="flex flex-wrap mb-8 justify-center">
+                <button class="px-4 py-2 m-1 bg-blue-600 text-white rounded-full">All</button>
+                <button class="px-4 py-2 m-1 bg-gray-300 dark:bg-gray-700 rounded-full">Roofing</button>
+                <button class="px-4 py-2 m-1 bg-gray-300 dark:bg-gray-700 rounded-full">Brickwork</button>
+                <button class="px-4 py-2 m-1 bg-gray-300 dark:bg-gray-700 rounded-full">Kitchens</button>
+                <button class="px-4 py-2 m-1 bg-gray-300 dark:bg-gray-700 rounded-full">Bathrooms</button>
+                <button class="px-4 py-2 m-1 bg-gray-300 dark:bg-gray-700 rounded-full">Outdoor</button>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <div class="gallery-item bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg text-black dark:text-white">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kitchen renovation" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold">Before</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Modern Kitchen Refit</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Complete kitchen redesign with custom cabinetry and quartz worktops</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">London, UK</span>
+                            <span class="text-sm font-medium">Completed: June 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="gallery-item bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Roof replacement" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold">After</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Complete Roof Replacement</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Traditional slate roof with modern insulation and ventilation</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Manchester, UK</span>
+                            <span class="text-sm font-medium">Completed: April 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="gallery-item bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bathroom renovation" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold">Before</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Luxury Bathroom Suite</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Wet room installation with underfloor heating and premium fixtures</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Birmingham, UK</span>
+                            <span class="text-sm font-medium">Completed: March 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="gallery-item bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1583845112203-4543772f0a27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Garden transformation" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold">After</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Garden Makeover</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Decking, fencing and landscaping for year-round enjoyment</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Leeds, UK</span>
+                            <span class="text-sm font-medium">Completed: February 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="gallery-item bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Extension project" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold">Before</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Single-Story Extension</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Brick-built extension with bi-fold doors and roof lantern</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Bristol, UK</span>
+                            <span class="text-sm font-medium">Completed: January 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="gallery-item bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Whole house renovation" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
+                            <span class="text-white font-bold">After</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Complete Home Renovation</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Structural repairs, reconfiguration and full refurbishment</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Edinburgh, UK</span>
+                            <span class="text-sm font-medium">Completed: December 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="py-16 dark:bg-gray-800 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="max-w-3xl mx-auto">Don't just take our word for it - hear from homeowners and businesses who've worked with us.</p>
+            </div>
+            
+            <div class="relative">
+                <div class="flex overflow-x-auto pb-6 scrollbar-hide space-x-4" id="testimonialCarousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card flex-shrink-0 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-black dark:text-black">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm ml-2">2 weeks ago</span>
+                        </div>
+                        <p class="mb-4">"Fletcher & Co. transformed our outdated kitchen into a stunning modern space. The team was professional, clean, and completed the work ahead of schedule. We couldn't be happier with the results!"</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Homeowner, London</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card flex-shrink-0 bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm ml-2">1 month ago</span>
+                        </div>
+                        <p class="mb-4">"After a bad experience with another contractor, Fletcher & Co. came in and fixed all the issues with our extension. Their attention to detail and communication was exceptional throughout the project."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Michael Brown" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold">Michael Brown</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Homeowner, Manchester</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card flex-shrink-0 bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm ml-2">2 months ago</span>
+                        </div>
+                        <p class="mb-4">"We hired Fletcher & Co. for a complete office refurbishment. They understood our business needs, worked around our schedule, and delivered a fantastic workspace that our team loves."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Wilson" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold">Emma Wilson</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Business Owner, Birmingham</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card flex-shrink-0 bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                            </div>
+                            <span class="text-sm ml-2">3 months ago</span>
+                        </div>
+                        <p class="mb-4">"The asbestos removal team was professional, efficient and left the area spotless. They explained every step of the process and provided all the necessary documentation."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Taylor" class="w-10 h-10 rounded-full mr-3">
+                            <div>
+                                <h4 class="font-bold">David Taylor</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Property Developer, Leeds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="prevTestimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-2 rounded-full shadow-lg -ml-4 z-10">
+                    <i class="fas fa-chevron-left text-blue-500"></i>
+                </button>
+                <button id="nextTestimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 p-2 rounded-full shadow-lg -mr-4 z-10">
+                    <i class="fas fa-chevron-right text-blue-500"></i>
+                </button>
+            </div>
+            
+            <div class="flex justify-center mt-8 space-x-4">
+                <a href="#" class="flex items-center text-blue-600 dark:text-blue-400">
+                    <i class="fab fa-google mr-2"></i> Google Reviews
+                </a>
+                <a href="#" class="flex items-center text-blue-600 dark:text-blue-400">
+                    <i class="fab fa-facebook mr-2"></i> Facebook Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-12 dark:bg-gray-900 bg-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h3 class="text-xl font-bold mb-2">Trusted By</h3>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <img src="https://via.placeholder.com/150x60?text=Trustpilot" alt="Trustpilot" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x60?text=CHAS" alt="CHAS" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x60?text=Constructionline" alt="Constructionline" class="h-12 opacity-70 hover:opacity-100 transition">
+                <img src="https://via.placeholder.com/150x60?text=SafeContractor" alt="SafeContractor" class="h-12 opacity-70 hover:opacity-100 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 dark:bg-gray-800 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+                <p class="max-w-3xl mx-auto">Ready to start your project? Contact us today for a free, no-obligation quote.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg text-black dark:text-black">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label for="name" class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block mb-2 font-medium">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800">
+                        </div>
+                        <div class="mb-4">
+                            <label for="jobType" class="block mb-2 font-medium">Job Type</label>
+                            <select id="jobType" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800">
+                                <option value="">Select a service</option>
+                                <option value="roofing">Roofing & Repairs</option>
+                                <option value="bricklaying">Bricklaying & Structural Work</option>
+                                <option value="plastering">Plastering & Rendering</option>
+                                <option value="tiling">Tiling & Grouting</option>
+                                <option value="kitchen">Kitchen & Bathroom Refits</option>
+                                <option value="fencing">Fencing & Outdoor Carpentry</option>
+                                <option value="asbestos">Asbestos Removal</option>
+                                <option value="renovations">General Renovations</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-medium">Project Details</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition">Send Message</button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg mb-8 text-black dark:text-black">
+                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-500 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold">Our Office</h4>
+                                    <p>123 Trade Street, Building Centre, London, N1 6AA</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-blue-500 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold">Call Us</h4>
+                                    <p>020 8123 4567</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Mon-Fri: 8am-6pm</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-500 mt-1 mr-4 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold">Email Us</h4>
+                                    <p>info@fletcherandco.com</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Response within 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 dark:bg-blue-900 p-8 rounded-lg shadow-lg text-black dark:text-black">
+                        <h3 class="text-2xl font-bold mb-4">Emergency Call-Out</h3>
+                        <p class="mb-6">For urgent roofing repairs or asbestos concerns outside normal hours, call our 24/7 emergency line:</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-volume text-blue-500 text-3xl mr-4"></i>
+                            <div>
+                                <p class="text-sm">24/7 Emergency</p>
+                                <p class="text-xl font-bold">0800 123 4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full bg-gray-300 dark:bg-gray-700">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.388022154873!2d-0.1272003230259899!3d51.52855877181481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b323093d307%3A0x2fb199016d5642a7!2sBuilding%20Centre!5e0!3m2!1sen!2suk!4v1689776034041!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-200 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hammer text-blue-500 text-2xl mr-2"></i>
+                        <h3 class="text-xl font-bold">Fletcher & Co.</h3>
+                    </div>
+                    <p class="mb-4">Providing exceptional property solutions across London and the South East since 2008.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="#services" class="hover:text-blue-400 transition">Services</a></li>
+                        <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+                        <li><a href="#reviews" class="hover:text-blue-400 transition">Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400 transition">Roofing & Repairs</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Bricklaying & Structural</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Plastering & Rendering</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Tiling & Grouting</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Kitchen & Bathroom Refits</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Asbestos Removal</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company Info</h3>
+                    <p class="mb-2">Fletcher & Co. Property Solutions Ltd</p>
+                    <p class="mb-2">Registered in England No: 12345678</p>
+                    <p class="mb-2">VAT Registration: GB 123 4567 89</p>
+                    <p class="mb-4">Asbestos Removal License: CAR-SO12345</p>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-blue-500 mr-2"></i>
+                        <span>Fully Insured</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p>© 2023 Fletcher & Co. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-blue-400 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-blue-400 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-blue-400 transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="mb-4 md:mb-0">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+            <div class="flex space-x-4">
+                <button id="cookieAccept" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded font-medium">Accept</button>
+                <button id="cookieDecline" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded font-medium">Decline</button>
+                <a href="#" class="text-blue-400 hover:underline">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Chat Widget -->
+    <div id="liveChat" class="fixed bottom-6 right-6">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110">
+            <i class="fas fa-comment-dots text-2xl"></i>
+        </button>
+    </div>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
+        const html = document.documentElement;
+        
+        // Initialize dark mode based on localStorage or prefer-color-scheme
+        function initDarkMode() {
+            const savedMode = localStorage.getItem('darkMode');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedMode === 'dark' || (!savedMode && prefersDark)) {
+                html.classList.add('dark');
+                html.classList.remove('light');
+                if (darkModeToggle) darkModeToggle.checked = true;
+            } else {
+                html.classList.add('light');
+                html.classList.remove('dark');
+                if (darkModeToggle) darkModeToggle.checked = false;
+            }
+        }
+        
+        // Set up toggle event listeners
+        function setupDarkModeToggle() {
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('change', function() {
+                    if (this.checked) {
+                        html.classList.add('dark');
+                        html.classList.remove('light');
+                        localStorage.setItem('darkMode', 'dark');
+                    } else {
+                        html.classList.add('light');
+                        html.classList.remove('dark');
+                        localStorage.setItem('darkMode', 'light');
+                    }
+                });
+            }
+            
+            if (darkModeToggleMobile) {
+                darkModeToggleMobile.addEventListener('click', function() {
+                    const isDark = html.classList.contains('dark');
+                    if (isDark) {
+                        html.classList.remove('dark');
+                        html.classList.add('light');
+                        localStorage.setItem('darkMode', 'light');
+                        if (darkModeToggle) darkModeToggle.checked = false;
+                    } else {
+                        html.classList.remove('light');
+                        html.classList.add('dark');
+                        localStorage.setItem('darkMode', 'dark');
+                        if (darkModeToggle) darkModeToggle.checked = true;
+                    }
+                });
+            }
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initDarkMode();
+            setupDarkModeToggle();
+        });
+        
+        if (darkModeToggleMobile) {
+            darkModeToggleMobile.addEventListener('click', function() {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    html.classList.add('light');
+                    localStorage.setItem('darkMode', 'light');
+                } else {
+                    html.classList.remove('light');
+                    html.classList.add('dark');
+                    localStorage.setItem('darkMode', 'dark');
+                }
+            });
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Testimonial carousel
+        const testimonialCarousel = document.getElementById('testimonialCarousel');
+        const prevTestimonial = document.getElementById('prevTestimonial');
+        const nextTestimonial = document.getElementById('nextTestimonial');
+        
+        if (testimonialCarousel && prevTestimonial && nextTestimonial) {
+            let scrollPosition = 0;
+            const scrollAmount = 300;
+            
+            prevTestimonial.addEventListener('click', function() {
+                testimonialCarousel.scrollLeft -= scrollAmount;
+            });
+            
+            nextTestimonial.addEventListener('click', function() {
+                testimonialCarousel.scrollLeft += scrollAmount;
+            });
+        }
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you shortly.');
+                this.reset();
+            });
+        }
+        
+        // Cookie consent
+        const cookieConsent = document.getElementById('cookieConsent');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieDecline = document.getElementById('cookieDecline');
+        
+        if (cookieConsent && cookieAccept && cookieDecline) {
+            // Check if consent was already given
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(() => {
+                    cookieConsent.classList.remove('hidden');
+                }, 2000);
+            }
+            
+            cookieAccept.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.classList.add('hidden');
+            });
+            
+            cookieDecline.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieConsent.classList.add('hidden');
+            });
+        }
+        
+        // Live chat
+        const liveChat = document.getElementById('liveChat');
+        if (liveChat) {
+            liveChat.addEventListener('click', function() {
+                alert('Our customer service team is available Mon-Fri, 9am-5pm. Please call us on 020 8123 4567 or email info@fletcherandco.com');
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
